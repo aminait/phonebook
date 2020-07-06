@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Phonebook.Data;
+using Phonebook.Models;
 
-namespace Phonebook.Models
+
+namespace Phonebook.Controllers
 {
     public class UserdetailsController : Controller
     {
         private readonly PhoneBookContext _context;
+
 
         public UserdetailsController(PhoneBookContext context)
         {
@@ -45,7 +49,7 @@ namespace Phonebook.Models
         }
 
         // GET: Userdetails/Create
-        [Authorize]
+        //[Authorize]
         public IActionResult Create()
         {
             return View();
@@ -69,7 +73,7 @@ namespace Phonebook.Models
         }
 
         // GET: Userdetails/Edit/5
-        [Authorize]
+       // [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,7 +94,7 @@ namespace Phonebook.Models
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+       // [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Mobile")] Userdetails userdetails)
         {
             if (id != userdetails.Id)
@@ -122,7 +126,7 @@ namespace Phonebook.Models
         }
 
         // GET: Userdetails/Delete/5
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -143,7 +147,7 @@ namespace Phonebook.Models
         // POST: Userdetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var userdetails = await _context.Userdetails.FindAsync(id);

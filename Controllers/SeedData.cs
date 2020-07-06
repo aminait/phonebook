@@ -15,7 +15,7 @@ namespace Phonebook.Controllers
                 serviceProvider.GetRequiredService<
                     DbContextOptions<PhoneBookContext>>()))
             {
-                // Look for any movies.
+                // Look for any contacts
                 if (context.Contact.Any())
                 {
                     return;   // DB has been seeded
@@ -44,8 +44,32 @@ namespace Phonebook.Controllers
                     }
                    
                 );
+                context.Userdetails.AddRange(
+                    new Userdetails
+                    {
+                        FirstName = "Testing",
+                        LastName = "One",
+                        Mobile = "05342334321"
+                    },
+
+                    new Userdetails
+                    {
+                        FirstName = "Second",
+                        LastName = "Testing",
+                        Mobile = "05334444553"
+                    },
+
+                    new Userdetails
+                    {
+                        FirstName = "Number",
+                        LastName = "Three",
+                        Mobile = "05366643232"
+                    }
+
+                );
                 context.SaveChanges();
             }
+
         }
     }
 }
