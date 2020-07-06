@@ -1,0 +1,59 @@
+﻿@model RegistrationViewModel
+
+
+<h2 class="text-center">Register</h2>
+
+    <div class="row align-items-center">
+
+        <div class="col-md-12">
+            <div class="jumbotron align-items-center">
+
+
+                <form role="form" asp-action="Registar" asp-controller="Account" method="post">
+                    <div class="input-group">
+                        <div class="form-group align-items-center col">
+
+                            <label for="FirstName">First Name</label>
+                            <input type="text" name="FirstName" asp-for="FirstName" autocomplete="off" data-val="true" class="form-control input-sm" data-val-required="First name is required." placeholder="First Name">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        <span class="input-group-btn" style="width:0px;"></span>
+
+                        <div class="form-group align-items-center col">
+                            <label for="LastName">Last Name</label>
+                            <input type="text" name="LastName" asp-for="LastName" autocomplete="off" data-val="true" class="form-control input-sm" data-val-required="Last name is required." placeholder="Last Name">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group align-items-center col">
+                        <label for="Email">Email</label>
+                        <input type="email" name="Email" asp-for="Email" autocomplete="off" data-val="true" class="form-control input-sm" data-val-required="The Mobile field is required." placeholder="Email Address">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="input-group">
+                        <div class="form-group align-items-center col">
+                            <label for="Password">Password</label>
+                            <input type="password" name="Password" asp-for="Password" autocomplete="off" class="form-control input-sm" data-val="true" data-val-required="The Mobile field is required." placeholder="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group align-items-center col">
+                            <label for="ConfirmPassword">Confirm Password</label>
+                            <input type="password" name="ConfirmPassword" asp-for="ConfirmPassword" autocomplete="off" class="form-control input-sm" placeholder="ConfirmPassword">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                     </div>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <input type="submit" value="Register" class="btn btn-info btn-block">
+                    <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>">
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
