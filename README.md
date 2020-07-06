@@ -1,2 +1,2 @@
 # Phonebook
-creating a phonebook API using ASP.NET and C# and MVC architecture
+Creating a phonebook API using ASP.NET, C# and MVC architecture
