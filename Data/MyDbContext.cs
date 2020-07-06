@@ -14,6 +14,9 @@ namespace Phonebook.Models
         {
 
         }
+
+        public object Userdetails { get; internal set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
